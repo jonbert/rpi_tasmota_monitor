@@ -1,4 +1,4 @@
-# rpi-tig
+# rpi-tasmota-monitor
 Dockerized Telegraf/InfluxDB/Grafana for Rpi
 
 ```
