@@ -24,24 +24,24 @@ services:
       - ${DATA_DIR}/influxdb:/var/lib/influxdb
     restart: always
 
-  grafana:
-    image: grafana/grafana:6.7.3
-    container_name: grafana
-    env_file:
-      - 'env.grafana'
-    depends_on:
-      - influxdb
-    ports:
-      - 3000:3000
-    volumes:
-      - ${DATA_DIR}/grafana:/var/lib/grafana
-    restart: always
+  # grafana:
+  #   image: grafana/grafana:6.7.3
+  #   container_name: grafana
+  #   env_file:
+  #     - 'env.grafana'
+  #   depends_on:
+  #     - influxdb
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - ${DATA_DIR}/grafana:/var/lib/grafana
+  #   restart: always
 
-  mqttbridge:
-    build: ./bridge
-    image: joncrees/mqttbridge
-    container_name: mqttbridge
-    depends_on:
-      - mosquitto
-      - influxdb
-    restart: always
+  # mqttbridge:
+  #   build: ./bridge
+  #   image: joncrees/mqttbridge
+  #   container_name: mqttbridge
+  #   depends_on:
+  #     - mosquitto
+  #     - influxdb
+  #   restart: always
